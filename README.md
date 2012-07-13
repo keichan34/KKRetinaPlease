@@ -30,6 +30,7 @@ JavaScript image replacement. (2) will append this class automatically.
 Note #2: You will be responsible for sizing the picture accordingly.
 
 Note #3: At the end of your HTML file you'll need
-<?php KKRP::js(); ?>
+
+    <?php KKRP::js(); ?>
 
 Before the </body> tag, to enable auto-switching and tracking.
