@@ -34,3 +34,10 @@ Note #3: At the end of your HTML file you'll need
     <?php KKRP::js(); ?>
 
 Before the `</body>` tag, to enable auto-switching and tracking.
+
+## How it Works
+
+The JavaScript snippet basically "tells" the server, after the first load, that this user
+requires Retina images. To cover that first load, the JS will go through all your images
+with the `autoRetina` class attached, and will dynamically load the Retina images on a
+device with a Retina screen.
