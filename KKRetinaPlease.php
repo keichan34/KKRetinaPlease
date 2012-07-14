@@ -2,17 +2,21 @@
 
 class KKRP {
 
-
+    static public $printed_js = false;
+    
     // Supply base to point the browser to the "retinaplease.js" file (optimally,
     // 'retinaplease.min.js', to save those extra bytes)
     static function js($base = null) {
+        // We only want to execute this once
+        if (self::$printed_js) { return ; }
         if (empty($base)) {
             echo '<script type="text/javascript">';
-            include dirname(__FILE__) . '/retinaplease.js';
+            include dirname(__FILE__) . '/retinaplease.min.js';
             echo '</script>';
         } else {
             echo "<script type=\"text/javascript\" src=\"{$base}/retinaplease.min.js\"></script>";
         }
+        self::$printed_js = true;
     }
     
     static function src($src, $echo = true) {
@@ -59,3 +63,5 @@ class KKRP {
     
     
 }
+
+register_shutdown_function('KKRP::js');

@@ -33,7 +33,9 @@ Note #3: At the end of your HTML file you'll need
 
     <?php KKRP::js(); ?>
 
-Before the `</body>` tag, to enable auto-switching and tracking.
+Before the `</body>` tag, to enable auto-switching and tracking. This is no longer
+required, but still recommended. PHP will automatically print the JS if it hasn't been
+printed yet, but this will probably occur AFTER the `</html>` tag.
 
 ## How it Works
 
